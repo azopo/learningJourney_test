@@ -1,3 +1,8 @@
 <template>
-  <div class="container text-red-400">test</div>
+  <div class="container">
+    <app-logo />
+  </div>
 </template>
+<script setup>
+import AppLogo from "@/components/AppLogo.vue";
+</script>
