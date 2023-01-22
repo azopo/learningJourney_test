@@ -2,7 +2,7 @@
   <div class="flex items-center">
     <div class="w-[40px] h-[40px] mr-[8px]">
       <img
-        src="public/img/logo.png"
+        src="../assets/img/logo.png"
         class="w-[100%] h-[100%] object-cover object-center"
         alt="logo"
       />
