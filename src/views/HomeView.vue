@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <app-logo />
+    <AppHeader />
   </div>
 </template>
 <script setup>
-import AppLogo from "@/components/AppLogo.vue";
+import AppHeader from "@/components/AppHeader.vue";
 </script>
