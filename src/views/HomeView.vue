@@ -2,11 +2,13 @@
   <div class="container p-10">
     <!--    <AppHeader />-->
     <!--    <custom-button>Test</custom-button>-->
-    <custom-input label="Card number" />
+    <!--    <custom-input label="Card number" />-->
+    <custom-divider />
   </div>
 </template>
 <script setup>
 // import CustomButton from "@/components/CustomButton.vue";
 // import AppHeader from "@/components/AppHeader.vue";
-import CustomInput from "@/components/CustomInput.vue";
+//import CustomInput from "@/components/CustomInput.vue";
+import CustomDivider from "@/components/CustomDivider.vue";
 </script>
