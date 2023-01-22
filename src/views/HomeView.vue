@@ -4,7 +4,8 @@
     <!--    <custom-button>Test</custom-button>-->
     <!--    <custom-input label="Card number" />-->
     <!--    <custom-divider />-->
-    <close-icon />
+    <!--    <close-icon />-->
+    <payment-window />
   </div>
 </template>
 <script setup>
@@ -12,5 +13,7 @@
 // import AppHeader from "@/components/AppHeader.vue";
 //import CustomInput from "@/components/CustomInput.vue";
 //import CustomDivider from "@/components/CustomDivider.vue";
-import CloseIcon from "@/components/CloseIcon.vue";
+//import CloseIcon from "@/components/CloseIcon.vue";
+import PaymentWindow from "@/components/PaymentWindow.vue";
+// import CustomSelect from "@/components/CustomSelect.vue";
 </script>
