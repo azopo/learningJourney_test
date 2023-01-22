@@ -82,6 +82,7 @@
       placeholder="••••  ••••  ••••  ••••"
       error-text="Invalid number"
       length="16"
+      @valid="isItemValid('cardNumber', $event)"
     >
       <template #after>
         <svg
@@ -125,6 +126,7 @@
       <custom-select
         class="w-[116px]"
         label="Month"
+        @valid="isItemValid('cardMonth', $event)"
         :items="[
           'January',
           'February',
@@ -140,7 +142,12 @@
           'December',
         ]"
       />
-      <custom-select class="w-[116px]" label="Year" :items="selectYear" />
+      <custom-select
+        class="w-[116px]"
+        label="Year"
+        @valid="isItemValid('cardYear', $event)"
+        :items="selectYear"
+      />
       <custom-input
         class="w-[116px]"
         label="CVC"
@@ -149,9 +156,20 @@
         placeholder="•••"
         error-text="Invalid"
         length="3"
+        @valid="isItemValid('cardCVC', $event)"
       />
     </div>
-    <custom-button class="w-[298px]" disabled> Submit </custom-button>
+    <custom-button
+      class="w-[298px] bg-black hover:bg-[#00CA14] transition-all text-white"
+      :disabled="!formValid"
+    >
+      Submit
+    </custom-button>
+    <button
+      class="mt-[22px] w-[298px] text-[16px] font-bold leading-[140%] text-black text-opacity-[.4] hover:text-opacity-100 transition-all"
+    >
+      Close
+    </button>
   </form>
 </template>
 <script setup>
@@ -159,10 +177,22 @@ import CustomButton from "@/components/CustomButton.vue";
 import CustomDivider from "@/components/CustomDivider.vue";
 import CustomInput from "@/components/CustomInput.vue";
 import CustomSelect from "@/components/CustomSelect.vue";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
 const selectYear = computed(() => {
   const currentYear = new Date().getFullYear() + 5;
   return Array.from({ length: 10 }, (_, i) => currentYear - i);
+});
+const itemsValid = ref({
+  cardNumber: false,
+  cardYear: false,
+  cardMonth: false,
+  cardCVC: false,
+});
+const isItemValid = (item, value) => {
+  itemsValid.value[item] = value;
+};
+const formValid = computed(() => {
+  return Object.values(itemsValid.value).every((value) => value === true);
 });
 </script>

@@ -7,6 +7,7 @@
     >
     <select
       :id="id"
+      @change="emit('valid', true)"
       class="w-full h-[46px] border focus:ring-blue-500 focus:ring-0 focus:outline-none border-[#D2D5DA] rounded-[8px] px-[13px] py-[15.5px] text-[12px] leading-[15px] text-[#6C727F] appearance-none"
     >
       <option selected disabled class="p-0">Select</option>
@@ -35,6 +36,8 @@
   </div>
 </template>
 <script setup>
+const emit = defineEmits(["valid"]);
+
 defineProps({
   label: {
     type: String,

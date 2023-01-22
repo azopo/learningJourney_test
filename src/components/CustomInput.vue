@@ -37,7 +37,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 
 const id = Math.random().toString(36);
 const props = defineProps({
@@ -99,6 +99,14 @@ const isValid = computed(() => {
     if (item.value.toString().length.toString() === props.length) {
       return 1;
     } else return 2;
+  }
+});
+const emit = defineEmits(["valid"]);
+watch(isValid, (val) => {
+  if (val === 1) {
+    emit("valid", true);
+  } else {
+    emit("valid", false);
   }
 });
 </script>
