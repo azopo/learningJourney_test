@@ -29,9 +29,7 @@ const timer = computed(() => {
   return minutes + ":" + seconds;
 });
 const translate = computed(() => {
-  const test = `${(timerCount.value / 180) * 100 - 100}%`;
-  console.log(test);
-  return test;
+  return `${(timerCount.value / 180) * 100 - 100}%`;
 });
 const startTimer = () => {
   setInterval(() => {
