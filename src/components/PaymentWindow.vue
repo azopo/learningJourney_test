@@ -71,7 +71,7 @@
           fill="#EA4335"
         />
       </svg>
-      <span class="uppercase ml-[6px]">pay</span>
+      <span class="uppercase ml-[6px] font-dm">pay</span>
     </custom-button>
     <custom-divider class="mb-[23px]" />
     <custom-input
