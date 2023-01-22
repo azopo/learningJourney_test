@@ -167,6 +167,7 @@
     </custom-button>
     <button
       class="mt-[22px] w-[298px] text-[16px] font-bold leading-[140%] text-black text-opacity-[.4] hover:text-opacity-100 transition-all"
+      @click="modalMyStore.changeModal()"
     >
       Close
     </button>
@@ -178,7 +179,8 @@ import CustomDivider from "@/components/CustomDivider.vue";
 import CustomInput from "@/components/CustomInput.vue";
 import CustomSelect from "@/components/CustomSelect.vue";
 import { computed, ref } from "vue";
-
+import { modalStore } from "@/stores/modal";
+const modalMyStore = modalStore();
 const selectYear = computed(() => {
   const currentYear = new Date().getFullYear() + 5;
   return Array.from({ length: 10 }, (_, i) => currentYear - i);

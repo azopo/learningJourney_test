@@ -1,5 +1,5 @@
 <template>
-  <div class="container pt-[77px] flex justify-center">
+  <div class="relative container pt-[77px] flex justify-center">
     <div class="mr-[24px]">
       <p
         class="text-[48px] font-extrabold leading-[120%] text-black mb-[24px] w-[473px]"
@@ -17,6 +17,7 @@
       </p>
       <custom-button
         class="bg-black hover:bg-[#00CA14] text-white transition-all px-[92.5px] w-[273px]"
+        @click="modalMyStore.changeModal()"
         >Get my plan</custom-button
       >
     </div>
@@ -26,4 +27,6 @@
 <script setup>
 import TrialBox from "@/components/TrialBox.vue";
 import CustomButton from "@/components/CustomButton.vue";
+import { modalStore } from "@/stores/modal";
+const modalMyStore = modalStore();
 </script>

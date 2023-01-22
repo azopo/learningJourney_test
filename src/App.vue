@@ -7,12 +7,21 @@
       <app-header />
     </header>
     <main>
-      <!--      <RouterView />-->
-      <payment-window />
+      <RouterView />
+      <div
+        v-if="modal"
+        class="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-black bg-opacity-[.2] z-40"
+      >
+        <payment-window />
+      </div>
     </main>
   </div>
 </template>
 <script setup>
 import AppHeader from "@/components/AppHeader.vue";
 import PaymentWindow from "@/components/PaymentWindow.vue";
+import { modalStore } from "@/stores/modal";
+import { computed } from "vue";
+const modalMyStore = modalStore();
+const modal = computed(() => modalMyStore.getModal);
 </script>
