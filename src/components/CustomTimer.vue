@@ -1,5 +1,9 @@
 <template>
   <div
+    :class="{
+      'shadow-[0_0_30px_-6px_rgba(255,0,0,1)] border-2 border-[#FF0000]':
+        timerCount <= 10,
+    }"
     class="h-[60px] w-[160px] bg-black overflow-x-hidden group rounded-[12px] relative"
   >
     <div
