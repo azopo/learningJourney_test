@@ -1,8 +1,10 @@
 <template>
   <div class="container">
-    <AppHeader />
+    <!--    <AppHeader />-->
+    <custom-button>Test</custom-button>
   </div>
 </template>
 <script setup>
-import AppHeader from "@/components/AppHeader.vue";
+import CustomButton from "@/components/CustomButton.vue";
+// import AppHeader from "@/components/AppHeader.vue";
 </script>
