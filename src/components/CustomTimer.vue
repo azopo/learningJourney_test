@@ -18,10 +18,13 @@
   </div>
 </template>
 <script setup>
-import { computed, onMounted, ref } from "vue";
+import { computed, onMounted } from "vue";
+import { timerStore } from "@/stores/timer";
 
-const timerCount = ref(180);
+const timerMyStore = timerStore();
+const timerCount = computed(() => timerMyStore.getTimerCount);
 const timer = computed(() => {
+  console.log(timerCount.value);
   let minutes = Math.floor(timerCount.value / 60);
   if (minutes < 10) minutes = "0" + minutes;
   let seconds = timerCount.value % 60;
@@ -34,13 +37,13 @@ const translate = computed(() => {
 const startTimer = () => {
   setInterval(() => {
     if (timerCount.value === 0) return;
-    timerCount.value--;
+    timerMyStore.minusTimerCount();
     localStorage.setItem("timerCount", timerCount.value.toString());
   }, 1000);
 };
 onMounted(() => {
   if (localStorage.getItem("timerCount"))
-    timerCount.value = parseInt(localStorage.getItem("timerCount"));
+    timerMyStore.changeTimerCount(parseInt(localStorage.getItem("timerCount")));
   startTimer();
 });
 </script>

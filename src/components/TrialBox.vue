@@ -15,9 +15,11 @@
           3-day trial for <span class="text-[#FF8D24]">$0.99</span>
         </p>
         <p class="text-black text-[20px] leading-[120%] font-semibold">
-          Then $9.99
+          <span v-if="timerCount > 0">Then $9.99</span>
+          <span v-else>$39.99/week</span>
         </p>
         <p
+          v-if="timerCount > 0"
           class="text-black text-opacity-[.4] text-[16px] font-semibold leading-[140%] line-through"
         >
           $39.99/week
@@ -143,12 +145,11 @@
     </div>
   </div>
 </template>
-<script>
-import { defineComponent } from "vue";
+<script setup>
 import CustomTimer from "@/components/CustomTimer.vue";
 import CustomButton from "@/components/CustomButton.vue";
-
-export default defineComponent({
-  components: { CustomButton, CustomTimer },
-});
+import { timerStore } from "@/stores/timer";
+import { computed } from "vue";
+const timerMyStore = timerStore();
+const timerCount = computed(() => timerMyStore.getTimerCount);
 </script>
