@@ -7,10 +7,12 @@
       <app-header />
     </header>
     <main>
-      <RouterView />
+      <!--      <RouterView />-->
+      <payment-window />
     </main>
   </div>
 </template>
 <script setup>
 import AppHeader from "@/components/AppHeader.vue";
+import PaymentWindow from "@/components/PaymentWindow.vue";
 </script>

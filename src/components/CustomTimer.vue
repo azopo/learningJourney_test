@@ -24,7 +24,6 @@ import { timerStore } from "@/stores/timer";
 const timerMyStore = timerStore();
 const timerCount = computed(() => timerMyStore.getTimerCount);
 const timer = computed(() => {
-  console.log(timerCount.value);
   let minutes = Math.floor(timerCount.value / 60);
   if (minutes < 10) minutes = "0" + minutes;
   let seconds = timerCount.value % 60;

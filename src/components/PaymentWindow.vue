@@ -77,6 +77,8 @@
     <custom-input
       class="mb-[30px]"
       label="Card number"
+      cardNumber
+      autocomplete="cc-number"
       placeholder="••••  ••••  ••••  ••••"
       error-text="Invalid number"
       length="16"
@@ -142,6 +144,8 @@
       <custom-input
         class="w-[116px]"
         label="CVC"
+        autocomplete="cc-csc"
+        type="password"
         placeholder="•••"
         error-text="Invalid"
         length="3"

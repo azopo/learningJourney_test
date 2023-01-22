@@ -13,8 +13,11 @@
         <slot name="after" />
       </div>
       <input
-        type="number"
+        :type="type"
+        @input="onInput"
+        :autocomplete="autocomplete"
         :id="id"
+        :value="itemValue"
         v-model="item"
         :class="{
           'border-[#D2D5DA]': isValid === 0,
@@ -42,6 +45,18 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  cardNumber: {
+    type: Boolean,
+    default: false,
+  },
+  type: {
+    type: String,
+    default: "text",
+  },
+  autocomplete: {
+    type: String,
+    default: "",
+  },
   placeholder: {
     type: String,
     default: "",
@@ -55,7 +70,28 @@ const props = defineProps({
     default: "",
   },
 });
+const onInput = () => {
+  item.value = item.value
+    .replace(/[^0-9.]/g, "")
+    .replace(/(\..*?)\..*/g, "$1")
+    .replace(/^0[^.]/, "0");
+  item.value = item.value.toString().slice(0, props.length);
+};
 const item = ref("");
+const itemValue = computed(() => {
+  if (props.cardNumber) {
+    const cardValue = item.value
+      .replace(/\D/g, "")
+      .match(/(\d{0,4})(\d{0,4})(\d{0,4})(\d{0,4})/);
+    if (cardValue) {
+      return !cardValue[2]
+        ? cardValue[1]
+        : `${cardValue[1]} ${cardValue[2]}${`${
+            cardValue[3] ? ` ${cardValue[3]}` : ""
+          }`}${`${cardValue[4] ? ` ${cardValue[4]}` : ""}`}`;
+    } else return item.value;
+  } else return item.value;
+});
 const isValid = computed(() => {
   if (item.value.length === 0) {
     return 0;
