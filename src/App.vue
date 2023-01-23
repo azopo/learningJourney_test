@@ -22,6 +22,7 @@ import AppHeader from "@/components/AppHeader.vue";
 import PaymentWindow from "@/components/PaymentWindow.vue";
 import { modalStore } from "@/stores/modal";
 import { computed } from "vue";
+
 const modalMyStore = modalStore();
 const modal = computed(() => modalMyStore.getModal);
 </script>

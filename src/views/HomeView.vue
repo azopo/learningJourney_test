@@ -1,13 +1,15 @@
 <template>
-  <div class="relative container pt-[77px] flex justify-center">
-    <div class="mr-[24px]">
+  <div
+    class="relative container mt-[32px] flex flex-col items-center md:flex-row md:justify-center md:items-start"
+  >
+    <div class="w-[320px] h-[239px] md:w-[473px] md:h-[287px]">
       <p
-        class="text-[48px] font-extrabold leading-[120%] text-black mb-[24px] w-[473px]"
+        class="text-[32px] leading-[120%] font-extrabold text-black mb-[16px] md:text-[48px] md:mb-[24px]"
       >
         Start your learning journey now
       </p>
       <p
-        class="text-[24px] font-semibold leading-[120%] text-black w-[375px] mb-[32px]"
+        class="text-[24px] leading-[120%] font-semibold text-black mb-[32px] md:w-[375px]"
       >
         Get a
         <span class="font-bold"
@@ -16,17 +18,18 @@
         plan to rock self-learning
       </p>
       <custom-button
-        class="bg-black hover:bg-[#00CA14] text-white transition-all px-[92.5px] w-[273px]"
+        class="w-[320px] bg-black hover:bg-[#00CA14] text-white transition-all md:w-[273px]"
         @click="modalMyStore.changeModal()"
-        >Get my plan</custom-button
-      >
+        >Get my plan
+      </custom-button>
     </div>
-    <trial-box />
+    <!--    <trial-box />-->
   </div>
 </template>
 <script setup>
 import TrialBox from "@/components/TrialBox.vue";
 import CustomButton from "@/components/CustomButton.vue";
 import { modalStore } from "@/stores/modal";
+
 const modalMyStore = modalStore();
 </script>
