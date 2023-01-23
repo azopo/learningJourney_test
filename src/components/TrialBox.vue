@@ -11,9 +11,9 @@
       class="h-[95px] flex justify-between items-center w-full mb-[24px] px-[16px] rounded-[12px] border border-[#CDCDCD] shadow-[0_4px_4px_rgba(0,0,0,0.06)] md:w-[426px] md:h-[85px] md:shadow-none md:border-0 md:px-0"
     >
       <div
-        class="w-[166px] h-[71px] md:flex md:items-start md:w-[238px] md:h-[85px]"
+        class="w-[166px] h-[71px] md:flex md:items-start md:flex-col md:justify-center md:w-[238px] md:h-[85px]"
         :class="{
-          'w-[288px] flex flex-col items-center justify-center ':
+          'w-[288px] flex flex-col items-center justify-center':
             timerCount <= 0,
         }"
       >
@@ -36,7 +36,7 @@
           $39.99/week
         </p>
       </div>
-      <custom-timer v-if="timerCount > 0 || screenWidth >= '992'" />
+      <custom-timer v-if="timerCount > 0 || !md" />
     </div>
     <slot />
     <div
@@ -96,7 +96,7 @@ import CustomTimer from "@/components/CustomTimer.vue";
 import CustomButton from "@/components/CustomButton.vue";
 import { timerStore } from "@/stores/timer";
 import { windowStore } from "@/stores/window";
-import { computed, onMounted } from "vue";
+import { computed } from "vue";
 import Star from "@/components/icons/star.vue";
 import Lock from "@/components/icons/lock.vue";
 import Asteroid from "@/components/icons/asteroid.vue";
@@ -104,10 +104,5 @@ import Asteroid from "@/components/icons/asteroid.vue";
 const timerMyStore = timerStore();
 const windowMyStore = windowStore();
 const timerCount = computed(() => timerMyStore.getTimerCount);
-const screenWidth = computed(() => windowMyStore.getWindowWidth);
-onMounted(() => {
-  window.addEventListener("resize", () => {
-    windowMyStore.changeWindowWidth(window.screen.width);
-  });
-});
+const md = computed(() => windowMyStore.getMdBreakpoint);
 </script>

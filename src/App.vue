@@ -23,10 +23,29 @@
 import AppHeader from "@/components/AppHeader.vue";
 import PaymentWindow from "@/components/PaymentWindow.vue";
 import { modalStore } from "@/stores/modal";
-import { computed } from "vue";
+import { computed, onBeforeUnmount, onMounted } from "vue";
+import { nextTick } from "vue";
+import { windowStore } from "@/stores/window";
 
+const windowMyStore = windowStore();
 const modalMyStore = modalStore();
 const modal = computed(() => modalMyStore.getModal);
+onMounted(() => {
+  windowMyStore.changeMdBreakpoint(
+    window.matchMedia("(max-width: 992px)").matches
+  );
+  nextTick(() => {
+    window.addEventListener("resize", onResize);
+  });
+});
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", onResize);
+});
+const onResize = () => {
+  windowMyStore.changeMdBreakpoint(
+    window.matchMedia("(max-width: 992px)").matches
+  );
+};
 </script>
 <style scoped>
 .fade-enter-active,

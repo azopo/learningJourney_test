@@ -2,14 +2,14 @@ import { defineStore } from "pinia";
 
 export const windowStore = defineStore("windowStore", {
   state: () => ({
-    windowWidth: window.screen.width,
+    mdBreakpoint: false,
   }),
   getters: {
-    getWindowWidth: (state) => state.windowWidth,
+    getMdBreakpoint: (state) => state.mdBreakpoint,
   },
   actions: {
-    changeWindowWidth(size) {
-      this.windowWidth = size;
+    changeMdBreakpoint(value) {
+      this.mdBreakpoint = value;
     },
   },
 });
