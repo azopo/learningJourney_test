@@ -26,7 +26,7 @@ import { modalStore } from "@/stores/modal";
 import { computed, onBeforeUnmount, onMounted } from "vue";
 import { nextTick } from "vue";
 import { windowStore } from "@/stores/window";
-
+document.title = "PlanetLearn";
 const windowMyStore = windowStore();
 const modalMyStore = modalStore();
 const modal = computed(() => modalMyStore.getModal);
