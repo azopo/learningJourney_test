@@ -1,16 +1,18 @@
-# vue-project
+# learningJourney_test
 
-This template should help get you started developing with Vue 3 in Vite.
+## Screenshots
+![mobile](https://user-images.githubusercontent.com/79973252/214038538-faf654e4-acda-4f9b-a744-a2ee2d39d60d.png)
+![desktop](https://user-images.githubusercontent.com/79973252/214038530-857905a6-cc86-4669-9283-c5892aba97ed.png)
+![desktop_pay](https://user-images.githubusercontent.com/79973252/214038533-056ad5cf-aa7c-41d1-a587-0b0f0e183ab5.png)
+![mobile_pay](https://user-images.githubusercontent.com/79973252/214038526-768baa4e-fd28-498d-8d8c-a62f5e1f34e9.png)
+## Technologies
 
-## Recommended IDE Setup
+- Vue 3
+- Tailwind
+- Vue Router
+- Pinia
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Project setup
 
 ```sh
 npm install
@@ -26,10 +28,4 @@ npm run dev
 
 ```sh
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
