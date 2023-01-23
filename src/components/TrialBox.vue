@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-[320px] flex flex-col items-center justify-center bg-white rounded-[24px] md:shadow-[0_0_0_4px_rgba(0,0,0,0.05)] md:w-[474px] md:h-[515px]"
+    class="relative w-[320px] flex flex-col items-center justify-center bg-transparent rounded-[24px] md:shadow-[0_0_0_4px_rgba(0,0,0,0.05)] md:w-[474px] md:h-[515px] md:bg-white"
   >
     <div
       class="absolute w-[202px] h-[80px] top-[-12%] right-[4.05%] z-50 hidden md:block"
@@ -8,7 +8,7 @@
       <asteroid />
     </div>
     <div
-      class="h-[95px] flex justify-between items-center w-full mb-[24px] px-[16px] rounded-[12px] border border-[#CDCDCD] shadow-[0_4px_4px_rgba(0,0,0,0.06)] md:w-[426px] md:h-[85px] md:shadow-none md:border-0 md:px-0"
+      class="h-[95px] flex justify-between items-center w-full mb-[24px] px-[16px] rounded-[12px] border border-[#CDCDCD] shadow-[0_4px_4px_rgba(0,0,0,0.06)] bg-white md:w-[426px] md:h-[85px] md:shadow-none md:border-0 md:px-0 md:bg-transparent"
     >
       <div
         class="w-[166px] h-[71px] md:flex md:items-start md:flex-col md:justify-center md:w-[238px] md:h-[85px]"
