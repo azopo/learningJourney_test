@@ -94,7 +94,7 @@ import { computed, ref } from "vue";
 import { modalStore } from "@/stores/modal";
 import PayPal from "@/components/icons/payPal.vue";
 import GooglePay from "@/components/icons/googlePay.vue";
-import Mastercard from "@/components/mastercard.vue";
+import Mastercard from "@/components/icons/mastercard.vue";
 const modalMyStore = modalStore();
 const selectYear = computed(() => {
   const currentYear = new Date().getFullYear() + 5;
