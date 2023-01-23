@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative container mt-[32px] flex flex-col items-center md:flex-row md:justify-center md:items-start"
+    class="relative container mt-[32px] pb-[24px] flex flex-col items-center md:flex-row md:justify-center md:items-start"
   >
     <start-learning v-if="!md" />
     <trial-box> <start-learning v-if="md" /></trial-box>
