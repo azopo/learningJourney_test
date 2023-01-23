@@ -7,7 +7,7 @@
         alt="logo"
       />
     </div>
-    <p class="font-bold text-[24px] leading-[29px]">
+    <p class="font-bold text-[24px] leading-[29px] w-[131px] h-[29px]">
       <span class="text-[#FF842B]">Planet</span>Learn
     </p>
   </div>

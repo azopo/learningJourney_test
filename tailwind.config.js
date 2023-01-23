@@ -7,10 +7,10 @@ module.exports = {
       center: true,
     },
     screens: {
-      xl: { min: "2580px" },
-      lg: { min: "1440px", max: "2580px" },
-      md: { min: "768px", max: "1440px" },
-      sm: { min: "360px", max: "767px" },
+      xl: { min: "1440px" },
+      lg: { min: "768px" },
+      md: { min: "576px" },
+      sm: { min: "360px" },
       xs: { max: "360px" },
     },
     fontFamily: {

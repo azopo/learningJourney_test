@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-[56px] flex items-center">
-    <app-logo class="ml-[135px] sm:ml-[26px] xs:ml-0" />
+    <app-logo class="ml-[20px] md:ml-[135px]" />
   </div>
 </template>
 
