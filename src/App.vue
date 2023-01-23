@@ -7,9 +7,8 @@
       <app-header />
     </header>
     <main>
-      <RouterView />
+      <!--      <RouterView />-->
       <div
-        v-if="modal"
         class="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-black bg-opacity-[.2] z-40"
       >
         <payment-window />
