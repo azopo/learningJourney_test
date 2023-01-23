@@ -8,10 +8,8 @@ module.exports = {
     },
     screens: {
       xl: { min: "1440px" },
-      lg: { min: "768px" },
-      md: { min: "576px" },
+      md: { min: "992px" },
       sm: { min: "360px" },
-      xs: { max: "360px" },
     },
     fontFamily: {
       proxima: ["ProximaNova", "system-ui"],

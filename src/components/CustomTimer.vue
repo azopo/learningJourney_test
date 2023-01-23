@@ -4,7 +4,7 @@
       'shadow-[0_0_30px_-6px_rgba(255,0,0,1)] border-2 border-[#FF0000]':
         timerCount <= 10 && timerCount > 0,
     }"
-    class="h-[60px] w-[160px] bg-black overflow-x-hidden group rounded-[12px] relative"
+    class="h-[47px] w-[110px] bg-black overflow-x-hidden group rounded-[12px] relative md:w-[160px] md:h-[60px]"
   >
     <div
       class="absolute text-white text-[24px] leading-[140%] font-semibold z-10 w-full h-full flex items-center justify-center"
