@@ -8,7 +8,7 @@
       <asteroid />
     </div>
     <div
-      class="h-[95px] flex justify-between items-center w-full mb-[24px] rounded-[12px] border border-[#CDCDCD] shadow-[0_4px_4px_rgba(0,0,0,0.06)] md:w-[426px] md:h-[85px] md:shadow-none md:border-0"
+      class="h-[95px] flex justify-between items-center w-full mb-[24px] px-[16px] rounded-[12px] border border-[#CDCDCD] shadow-[0_4px_4px_rgba(0,0,0,0.06)] md:w-[426px] md:h-[85px] md:shadow-none md:border-0 md:px-0"
     >
       <div
         class="w-[166px] h-[71px] md:flex md:items-start md:w-[238px] md:h-[85px]"
