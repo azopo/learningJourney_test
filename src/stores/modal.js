@@ -9,7 +9,6 @@ export const modalStore = defineStore("modalStore", {
   },
   actions: {
     changeModal() {
-      console.log(1);
       this.modal = !this.modal;
     },
   },

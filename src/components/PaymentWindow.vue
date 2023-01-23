@@ -79,7 +79,7 @@
     </custom-button>
     <button
       class="mt-[12px] w-[300px] text-[16px] font-bold leading-[140%] text-black text-opacity-[.4] hover:text-opacity-100 transition-all"
-      @click="modalMyStore.changeModal()"
+      @click.prevent="modalMyStore.changeModal()"
     >
       Close
     </button>
