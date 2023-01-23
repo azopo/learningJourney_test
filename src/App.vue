@@ -8,14 +8,14 @@
     </header>
     <main>
       <RouterView />
-      <transition name="fade">
+      <Transition>
         <div
           v-if="modal"
           class="fixed top-0 left-0 w-screen h-screen flex justify-center items-center bg-black bg-opacity-[.2] z-40"
         >
           <payment-window />
         </div>
-      </transition>
+      </Transition>
     </main>
   </div>
 </template>
@@ -48,13 +48,13 @@ const onResize = () => {
 };
 </script>
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.4s linear;
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
 }
 
-.fade-enter,
-.fade-leave-to {
+.v-enter-from,
+.v-leave-to {
   opacity: 0;
 }
 </style>
