@@ -38,6 +38,7 @@
       </div>
       <custom-timer v-if="timerCount > 0 || screenWidth >= '992'" />
     </div>
+    <slot />
     <div
       class="w-[320px] text-black text-[16px] leading-[120%] mb-[24px] md:w-[421px]"
     >
@@ -94,17 +95,19 @@
 import CustomTimer from "@/components/CustomTimer.vue";
 import CustomButton from "@/components/CustomButton.vue";
 import { timerStore } from "@/stores/timer";
-import { computed, onMounted, ref } from "vue";
+import { windowStore } from "@/stores/window";
+import { computed, onMounted } from "vue";
 import Star from "@/components/icons/star.vue";
 import Lock from "@/components/icons/lock.vue";
 import Asteroid from "@/components/icons/asteroid.vue";
 
 const timerMyStore = timerStore();
+const windowMyStore = windowStore();
 const timerCount = computed(() => timerMyStore.getTimerCount);
-const screenWidth = ref(window.screen.width);
+const screenWidth = computed(() => windowMyStore.getWindowWidth);
 onMounted(() => {
   window.addEventListener("resize", () => {
-    screenWidth.value = window.screen.width;
+    windowMyStore.changeWindowWidth(window.screen.width);
   });
 });
 </script>
